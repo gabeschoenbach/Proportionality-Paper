@@ -9,7 +9,7 @@ import os
 
 PALETTE = "bright"
 colors = sns.color_palette(PALETTE) + sns.color_palette(PALETTE)
-DPI_SIZE = 50
+DPI_SIZE = 600
 
 def make_df(path):
     """
@@ -120,6 +120,7 @@ def plot_score_histogram(scores, ax, i, step, num_scores, title):
             patch.set_fc(colors[i-1])
         ax[i].axvline(mean+0.5, color="black", lw=4, label=f"mean={mean:.2f}") # offset bc of x labeling
         ax[i].legend()
+    ax[i].bar_label(ax[i].containers[0]) # put number of plans above each bar
     ax[i].set_xlim(0, num_scores)
     ax[i].set_xticks(np.arange(0.5, num_scores + 0.5))
     ax[i].set_xticklabels(np.arange(0, num_scores))
@@ -206,7 +207,7 @@ def make_histogram(state, output_string, percentile=5):
         Suffix of run name we're interested in, e.g. "guided_proportionality_scores_100000"
     """
     data_path = f"outputs/{state}/{state}_{output_string}.csv"
-    output_file = f"outputs/{state}/plots/{state}_{output_string}.png"
+    output_file = f"outputs/{state}/plots/{state}_{output_string}_HQ.png"
     prop_df, bin_df = make_df(data_path)
 
     fig, ax = plt.subplots(3, 1, figsize=(10, 8))
@@ -249,10 +250,38 @@ def make_histogram(state, output_string, percentile=5):
                   color="gray", 
                   alpha=0.2, 
                   label="low variance")
-                  
+    
+    ### Dictionary for plan names
+    plan_names = {
+        "NC": {"newplan":"newplan",
+               "oldplan":"oldplan",
+               "judge":"judge",
+              },
+        "MD": {"CD":"Enacted",
+                "CNG02":"Previous 02"
+              },
+        "MA": {"CD":"Enacted",
+              },
+        "TX": {"CD":"Enacted",
+               "538_Dem":"538D",
+               "538_Propor":"538P",
+              },
+        "WI": {"CD":"Enacted",
+              },
+        "PA": {"CD_2011":"Leg12",
+               "REMEDIAL":"REMEDIAL",
+               "GOV":"GOV",
+               "538GOP":"538R",
+               "TS":"Leg18",
+               "538DEM":"538P",
+              },
+    }
+
     # Add enacted plans
     stat = [0,1,1] # second two plots record means
     for i, plan in enumerate(enacted_plans.keys()):
+        if plan not in plan_names[state]:
+            continue
         for j in range(3):
             val = enacted_plans[plan][stat[j]]
             if j == 2 and enacted_plans[plan][stat[0]] > threshold:
@@ -260,7 +289,7 @@ def make_histogram(state, output_string, percentile=5):
             ax[j].axvline(val,
                           color=colors[i],
                           lw=2,
-                          label=f"{plan}={val:0.3f}",
+                          label=f"{plan_names[state][plan]}={val:0.3f}",
                           )
             ax[j].legend()
     # Annotate
