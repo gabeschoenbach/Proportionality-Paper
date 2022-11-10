@@ -535,7 +535,7 @@ def run_chain_track_proportionality(state, chain, output_string, elecs):
     return
 
 
-def run_chain_track_training_testing(state, chain):
+def run_chain_track_training_testing(state, chain, threshold):
     elections = states[state]["elections"]
     training_elections = states[state]["early"]
     testing_elections = [e for e in elections if e not in training_elections]
@@ -548,8 +548,8 @@ def run_chain_track_training_testing(state, chain):
     }
 
     for partition in tqdm(chain):
-        training_score = is_proportional_score(partition, training_elections)
-        testing_score = is_proportional_score(partition, testing_elections)
+        training_score = is_proportional_score(partition, training_elections, threshold=threshold)
+        testing_score = is_proportional_score(partition, testing_elections, threshold=threshold)
         plans_by_training_score[training_score] += 1
         plans_by_testing_score[training_score][testing_score] += 1
 
