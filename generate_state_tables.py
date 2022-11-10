@@ -3,6 +3,9 @@ import numpy as np
 
 def main():
     for state in states.keys():
+        if state == "WI":
+            print("Skipping Wisconsin due to old vs. new json weirdness")
+            continue
         print(f"Saving election stats for {state}...")
         graph = initialize_graph(state)
         plans = states[state]["ENACTED_COL"]
