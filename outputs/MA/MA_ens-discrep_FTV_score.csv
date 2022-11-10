@@ -1,0 +1,8 @@
+,PRES16,PRES12,SEN18,SEN14,FTV,Pass?
+MA_Proportional_DIST,0.0,0.2222,0.1108,0.1111,3,Y
+MA_Compact_DIST,0.0,-0.0,-0.0003,-0.0,4,Y
+MA_compact_algorithm_DIST,0.0,-0.0,-0.0003,-0.0,4,Y
+MA_Dem_DIST,0.0,-0.0,-0.0003,-0.0,4,Y
+MA_GOP_DIST,0.0,-0.0,0.1108,0.1111,4,Y
+MA_Competitive_DIST,0.0,-0.0,0.1108,0.1111,4,Y
+MA_current_DIST,0.0,-0.0,-0.0003,-0.0,4,Y
