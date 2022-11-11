@@ -14,8 +14,7 @@ import pickle
 import math
 from itertools import combinations
 
-plan_names = ["Proportional_DIST", "Compact_DIST", "compact_algorithm_DIST",
-              "Dem_DIST", "GOP_DIST", "Competitive_DIST", "current_DIST"]
+plan_names_538 = ["Proportional_DIST", "Dem_DIST", "GOP_DIST"]
 
 states = {
     # 'DE': {'elections': {
@@ -103,7 +102,7 @@ states = {
         "early": ["GOV08", "SEN08", "SEN10", "GOV12", "PRES12"],
         "POP_COL": "TOTPOP",
         # "ENACTED_COL": ["newplan", "oldplan", "judge"],
-        "ENACTED_COL": ["NC_" + col for col in plan_names],
+        "ENACTED_COL": ["newplan", "oldplan", "judge"] + ["NC_" + col for col in plan_names_538],
     },
     "PA": {
         "elections": {
@@ -121,7 +120,7 @@ states = {
         "early": ["GOV10", "SEN10", "SEN12", "PRES12"],
         "POP_COL": "TOTPOP",
         # "ENACTED_COL": ["CD_2011", "REMEDIAL", "GOV", "TS", "538DEM", "538GOP", "538CMPCT"],
-        "ENACTED_COL": ["PA_" + col for col in plan_names],
+        "ENACTED_COL": ["CD_2011", "TS", "REMEDIAL", "GOV"] + ["PA_" + col for col in plan_names_538],
     },
     "WI": {
         "elections": {
@@ -143,7 +142,7 @@ states = {
         "early": ["GOV12", "PRES12", "SEN12", "GOV14", "SOS14", "TRE14", "AG14"],
         "POP_COL": "TOTPOP",
         # "ENACTED_COL": ["CD"],
-        "ENACTED_COL": ["WI_" + col for col in plan_names],
+        "ENACTED_COL": ["WI_" + col for col in plan_names_538],
     },
     "MA": {
         "elections": {
@@ -160,7 +159,7 @@ states = {
         "early": ["SEN12", "PRES12", "SEN13", "SEN14", "GOV14"],
         "POP_COL": "TOTPOP",
         # "ENACTED_COL": ["CD"],
-        "ENACTED_COL": ["MA_" + col for col in plan_names],
+        "ENACTED_COL": ["CD"] + ["MA_" + col for col in plan_names_538],
     },
     "MD": {
         "elections": {
@@ -179,7 +178,7 @@ states = {
         "early": ["PRES12", "SEN12", "GOV14", "AG14", "COMP14"],
         "POP_COL": "TOTPOP",
         # "ENACTED_COL": ["CD", "CNG02"],
-        "ENACTED_COL": ["MD_" + col for col in plan_names],
+        "ENACTED_COL": ["CD", "CNG02"] + ["MD_" + col for col in plan_names_538],
     },
     "TX": {
         "file": "data/TX_VTDs/TX_VTDs.shp",
@@ -211,7 +210,7 @@ states = {
         "early": ["PRES12", "SEN12", "SEN14", "GOV14", "AG14"],
         "POP_COL": "TOTPOP_x",
         # "ENACTED_COL": ["CD", "Seed_Demo", "538_Dem", "538_Comp_1", "538_Propor", "Seed3"],
-        "ENACTED_COL": ["TX_" + col for col in plan_names],
+        "ENACTED_COL": ["CD"] + ["TX_" + col for col in plan_names_538],
     },
     # 'VT': {'elections': {
     #         'PRES16': ['PRES16D', 'PRES16R'],

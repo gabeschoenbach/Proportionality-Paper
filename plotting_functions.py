@@ -11,6 +11,44 @@ PALETTE = "bright"
 colors = sns.color_palette(PALETTE) + sns.color_palette(PALETTE)
 DPI_SIZE = 600
 
+### Dictionary for plan names
+plan_names = {
+    "NC": {"newplan":"Leg16",
+            "oldplan":"Leg12",
+            "judge":"judges",
+            "NC_Proportional_DIST": "538-Pro",
+            "NC_Dem_DIST": "538-Dem",
+            "NC_GOP_DIST": "538-GOP",
+            },
+    "MD": {"CD":"Enacted",
+            "CNG02":"Previous 02",
+            "MD_Proportional_DIST": "538-Pro",
+            "MD_Dem_DIST": "538-Dem",
+            "MD_GOP_DIST": "538-GOP",
+            },
+    "MA": {"CD":"Enacted",
+            "MA_Proportional_DIST": "538-Pro",
+            "MA_Dem_DIST": "538-Dem",
+            "MA_GOP_DIST": "538-GOP",
+            },
+    "TX": {"CD":"Enacted",
+            "TX_Proportional_DIST": "538-Pro",
+            "TX_Dem_DIST": "538-Dem",
+            "TX_GOP_DIST": "538-GOP",
+            },
+    "WI": {"CD":"Enacted",
+            # weirdness here...
+            },
+    "PA": {"CD_2011":"Leg12",
+            "REMEDIAL":"REMEDIAL",
+            "GOV":"GOV",
+            "TS":"Leg18",
+            "PA_Proportional_DIST": "538-Pro",
+            "PA_Dem_DIST": "538-Dem",
+            "PA_GOP_DIST": "538-GOP",
+            },
+}
+
 def make_df(path):
     """
     Returns two pandas DataFrames, one with the proportionality vector for each plan, and one
@@ -250,32 +288,6 @@ def make_histogram(state, output_string, percentile=5):
                   color="gray", 
                   alpha=0.2, 
                   label="low variance")
-    
-    ### Dictionary for plan names
-    plan_names = {
-        "NC": {"newplan":"newplan",
-               "oldplan":"oldplan",
-               "judge":"judge",
-              },
-        "MD": {"CD":"Enacted",
-                "CNG02":"Previous 02"
-              },
-        "MA": {"CD":"Enacted",
-              },
-        "TX": {"CD":"Enacted",
-               "538_Dem":"538D",
-               "538_Propor":"538P",
-              },
-        "WI": {"CD":"Enacted",
-              },
-        "PA": {"CD_2011":"Leg12",
-               "REMEDIAL":"REMEDIAL",
-               "GOV":"GOV",
-               "538GOP":"538R",
-               "TS":"Leg18",
-               "538DEM":"538P",
-              },
-    }
 
     # Add enacted plans
     stat = [0,1,1] # second two plots record means
