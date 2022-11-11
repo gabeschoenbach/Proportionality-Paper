@@ -32,6 +32,6 @@ if __name__=="__main__":
     #      100000,
     #      elecs=["GOV08", "SEN08", "SEN10", "GOV12", "PRES12"],
     #      )
-    main("NC",
+    main("MD",
          100000,
          )

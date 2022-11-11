@@ -191,7 +191,7 @@ def plot_full_score_histogram(state, chain_length):
                                  )
     if not os.path.exists(f"outputs/{state}/plots"):
         os.makedirs(f"outputs/{state}/plots")
-    plt.savefig(f"outputs/{state}/plots/{state}_early_later.png", dpi=DPI_SIZE, bbox_inches='tight')
+    plt.savefig(f"outputs/{state}/plots/{state}_early_later_new.png", dpi=DPI_SIZE, bbox_inches='tight')
     return
 
 def make_histogram(state, output_string, percentile=5):
@@ -385,11 +385,11 @@ def make_pie_charts(states, chain_length=100000, threshold=0.07):
 
 
 if __name__=="__main__":
-    make_pie_charts(list(states.keys()))
+    # make_pie_charts(list(states.keys()))
     for state in states.keys():
         print(state)
         plot_full_score_histogram(state, 100000)
-        make_histogram(state, "proportionality_scores_100000")
+        # make_histogram(state, "proportionality_scores_100000")
     # plot_full_score_histogram("TX", 100000)
     # plot_full_score_histogram("PA", 100000)
     # make_histogram("PA", "proportionality_scores_100000")
