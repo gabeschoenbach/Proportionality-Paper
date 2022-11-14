@@ -55,6 +55,6 @@ def main(score_type):
         df.to_csv(output_path)
 
 if __name__=="__main__":
-    # main("disprop")
+    main("disprop")
     main("eg")
     main("ens-discrep")
