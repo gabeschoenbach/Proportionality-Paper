@@ -17,9 +17,9 @@ def make_xy_jitter(scale=1000):
 
 def main():
     colors = {
-    "538-Dem": 'blue',
-    "538-GOP": 'red',
-    "538-Pro": 'purple'
+    "538-Dem": '#1560BD',
+    "538-GOP": '#E32636',
+    "538-Pro": '#8B008B'
     }
     # for state in ["PA", "MD", "MA", "TX", "NC"]:
     for state in ["PA"]:
@@ -30,7 +30,7 @@ def main():
         fig, ax = plt.subplots(figsize=(10,10))
         plt.scatter(means, variances, color='gray', s=20)
         
-        yellow_colors = ['darkorange', 'goldenrod', 'gold', 'yellow']
+        yellow_colors = ['#FB607F', '#FFBF00', '#8DB600', '#D2691E']
         for plan in plan_mvs.index:
             nice_name = plan_names[state][plan]
             if nice_name in colors:
@@ -41,7 +41,7 @@ def main():
             mean = plan_mvs.loc[plan]['disprop_mean']
             var = plan_mvs.loc[plan]['disprop_var']
             x_jit, y_jit = make_xy_jitter()
-            plt.scatter(mean + x_jit, var + y_jit, label=nice_name, color=color, s=100, edgecolors='black', alpha=0.5)
+            plt.scatter(mean, var + y_jit, label=nice_name, color=color, s=100, edgecolors='black', alpha=0.5)
 
         ax.set_xlim(-0.35, 0.35)
         ax.set_ylim(-0.001, 0.1)

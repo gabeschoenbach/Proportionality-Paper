@@ -181,7 +181,7 @@ states = {
         "ENACTED_COL": ["CD", "CNG02"] + ["MD_" + col for col in plan_names_538],
     },
     "TX": {
-        "file": "data/TX_VTDs/TX_VTDs.shp",
+        # "file": "data/TX_VTDs/TX_VTDs.shp",
         "elections": {
             "PRES12":["ObamaD_12G", "RomneyR_12"],
             "SEN12":["SadlerD_12", "CruzR_12G_"],
