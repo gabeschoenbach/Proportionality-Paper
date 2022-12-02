@@ -141,8 +141,8 @@ states = {
         "past4": ["PRES16", "PRES12", "SEN18", "SEN16"],
         "early": ["GOV12", "PRES12", "SEN12", "GOV14", "SOS14", "TRE14", "AG14"],
         "POP_COL": "TOTPOP",
-        # "ENACTED_COL": ["CD"],
-        "ENACTED_COL": ["WI_" + col for col in plan_names_538],
+        "ENACTED_COL": ["CD"],
+        # "ENACTED_COL": ["WI_" + col for col in plan_names_538],
     },
     "MA": {
         "elections": {

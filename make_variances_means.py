@@ -4,7 +4,8 @@ from tqdm import tqdm
 import pandas as pd
 
 def main():
-    states = ["NC", "WI", "TX", "PA", "MD", "MA"]
+    # states = ["NC", "WI", "TX", "PA", "MD", "MA"]
+    states = ["WI"]
     for state in states:
         # EG
         df = pd.read_csv(f"outputs/{state}/{state}_eg_scores_100000.csv")
