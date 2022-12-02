@@ -1,2 +1,2 @@
 # Proportionality
-This repo contains experiments for a work-in-progress paper exploring the Freedom to Vote Act's proposal of a gerrymandering standard.
+This repo contains data, experiments, and output for `Redistricting for Proportionality`, exploring the Freedom to Vote Act's proposal of a standard to flag partisan gerrymandering.
