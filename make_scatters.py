@@ -45,8 +45,8 @@ def main():
         ax.set_xlim(-0.35, 0.35)
         ax.set_ylim(-0.001, 0.1)
         plt.axvline(0, color='gray', alpha=0.5)
-        plt.legend()
-        plt.savefig(f"outputs/{state}/plots/{state}_scatter.png")
+        plt.legend(fontsize=20)
+        plt.savefig(f"outputs/{state}/plots/{state}_scatter.png", bbox_inches='tight')
     return
 
 if __name__=="__main__":
