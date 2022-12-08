@@ -2,7 +2,7 @@ from chain_functions import *
 from plotting_functions import make_df
 
 def main():
-    for state in states:
+    for state in ["TX"]:
         print(f"Saving plans stats on {state}...")
         # if state == "WI":
         #     print("Skipping WI because old vs. new json weirdness")

@@ -5,7 +5,7 @@ import pandas as pd
 
 def main():
     # states = ["NC", "WI", "TX", "PA", "MD", "MA"]
-    states = ["WI"]
+    states = ["TX"]
     for state in states:
         # EG
         df = pd.read_csv(f"outputs/{state}/{state}_eg_scores_100000.csv")

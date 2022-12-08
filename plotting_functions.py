@@ -32,6 +32,7 @@ plan_names = {
             "MA_GOP_DIST": "538-GOP",
             },
     "TX": {"CD":"VRA",
+           "CONG_2010": "Leg11",
             "TX_Proportional_DIST": "538-Pro",
             "TX_Dem_DIST": "538-Dem",
             "TX_GOP_DIST": "538-GOP",

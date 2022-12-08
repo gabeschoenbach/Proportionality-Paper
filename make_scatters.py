@@ -22,7 +22,7 @@ def main():
     "538-Pro": '#8B008B'
     }
     # for state in ["WI", "PA", "MD", "MA", "TX", "NC"]:
-    for state in ["PA"]:
+    for state in ["TX"]:
         plan_mvs = pd.read_csv(f"outputs/{state}/{state}_mean_var_stats.csv", index_col=0)
         df = pd.read_csv(f"outputs/{state}/{state}_disprop_scores_100000.csv")
         variances, means = find_variances_and_means(df)

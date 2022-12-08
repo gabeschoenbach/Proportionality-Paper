@@ -42,5 +42,5 @@ def make_tables(state):
 
 if __name__=="__main__":
     # for state in tqdm(["NC", "PA", "WI", "TX", "MD", "MA"]):
-    for state in tqdm(["TX", "MD", "MA"]):
+    for state in tqdm(["TX"]):
         make_tables(state)
