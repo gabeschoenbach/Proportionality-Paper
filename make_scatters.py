@@ -41,7 +41,7 @@ def main():
             mean = plan_mvs.loc[plan]['disprop_mean']
             var = plan_mvs.loc[plan]['disprop_var']
             x_jit, y_jit = make_xy_jitter()
-            plt.scatter(mean, var + y_jit, label=nice_name, color=color, s=300, edgecolors='black', alpha=0.9)
+            plt.scatter(mean, var + 0, label=nice_name, color=color, s=300, edgecolors='black', alpha=0.9)
 
         ax.set_xlim(-0.35, 0.35)
         ax.set_ylim(-0.001, 0.1)

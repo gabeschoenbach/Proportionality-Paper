@@ -210,7 +210,7 @@ states = {
         "early": ["PRES12", "SEN12", "SEN14", "GOV14", "AG14"],
         "POP_COL": "TOTPOP_x",
         # "ENACTED_COL": ["CD", "Seed_Demo", "538_Dem", "538_Comp_1", "538_Propor", "Seed3"],
-        "ENACTED_COL": ["CD", "CONG_2010"] + ["TX_" + col for col in plan_names_538],
+        "ENACTED_COL": ["CONG_2010", "CD"] + ["TX_" + col for col in plan_names_538],
     },
     # 'VT': {'elections': {
     #         'PRES16': ['PRES16D', 'PRES16R'],
