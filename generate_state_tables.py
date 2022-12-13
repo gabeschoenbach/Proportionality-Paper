@@ -2,15 +2,17 @@ from chain_functions import *
 import numpy as np
 
 def main():
-    for state in states.keys():
-        if state == "WI":
-            print("Skipping WI due to old vs. new json weirdness")
-            continue
+    # for state in states.keys():
+    for state in ["TX"]:
+        # if state == "WI":
+        #     print("Skipping WI due to old vs. new json weirdness")
+        #     continue
         print(f"Saving election stats for {state}...")
         graph = initialize_graph(state)
         plans = states[state]["ENACTED_COL"]
         for idx, plan in enumerate(plans):
             partition = initialize_partition(graph, state, idx)
+            print(plan, len(partition))
             elections = list(states[state]["elections"].keys())
             output_path = f"outputs/{state}/{state}_{plan}_election_stats.csv"
             if os.path.exists(output_path):
