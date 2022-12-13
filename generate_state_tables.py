@@ -3,7 +3,7 @@ import numpy as np
 
 def main():
     # for state in states.keys():
-    for state in ["TX"]:
+    for state in ["WI", "TX"]:
         # if state == "WI":
         #     print("Skipping WI due to old vs. new json weirdness")
         #     continue

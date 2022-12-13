@@ -5,7 +5,7 @@ import numpy as np
 
 def main(score_type):
     # for state in ["NC", "PA", "WI", "MA", "MD", "TX"]:
-    for state in ["TX"]:
+    for state in ["TX", "WI"]:
         print(f"Calculating {score_type} FTV score for {state}...")
         # if state == "WI":
         #     print("Skipping WI because old vs. new json weirdness")

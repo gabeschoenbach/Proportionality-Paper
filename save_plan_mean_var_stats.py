@@ -2,11 +2,8 @@ from chain_functions import *
 from plotting_functions import make_df
 
 def main():
-    for state in ["TX"]:
+    for state in ["TX", "WI"]:
         print(f"Saving plans stats on {state}...")
-        # if state == "WI":
-        #     print("Skipping WI because old vs. new json weirdness")
-        #     continue
         output_path = f"outputs/{state}/{state}_mean_var_stats.csv"
         if os.path.exists(output_path):
             os.remove(output_path)
