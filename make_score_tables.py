@@ -1,4 +1,5 @@
 from plotting_functions import make_df
+from chain_functions import states
 from tqdm import tqdm
 import pandas as pd
 
@@ -8,13 +9,14 @@ import pandas as pd
 
 def make_tables(state):
     df, _ = make_df(f"outputs/{state}/{state}_proportionality_scores_100000.csv")
-    stats = pd.read_csv(f"outputs/{state}/{state}_election_stats.csv", index_col=0)
+    first_plan = states[state]["ENACTED_COL"][0]
+    stats = pd.read_csv(f"outputs/{state}/{state}_{first_plan}_election_stats.csv", index_col=0)
     seats_df = df.copy()
     eg_df = df.copy()
     ensemble_df = df.copy()
 
     k = int(stats.loc["seats"][0])
-    seat_share = dict(stats.loc["seat_share"])
+    seat_share = dict(stats.loc["Rseat_share"])
     vote_share = dict(stats.loc["vote_share"])
     elections = list(df.columns)
     elections_w_stats = list(vote_share)
