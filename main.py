@@ -66,6 +66,6 @@ def swinginess_run(state,
     return
 
 if __name__=="__main__":
-    # score_run()
-    # histogram_run()
-    swinginess_run()
+    #score_run()
+    histogram_run()
+    #swinginess_run()
