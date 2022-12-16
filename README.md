@@ -70,7 +70,6 @@ plan_names = {
            "WI_Proportional_DIST": "538-Pro",
            "WI_Dem_DIST": "538-Dem",
            "WI_GOP_DIST": "538-GOP",
-            # weirdness here...
             },
     "PA": {"CD_2011":"Leg11",
             "REMEDIAL":"Remedial",
