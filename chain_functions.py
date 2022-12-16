@@ -17,75 +17,6 @@ from itertools import combinations
 plan_names_538 = ["Proportional_DIST", "Dem_DIST", "GOP_DIST"]
 
 states = {
-    # 'DE': {'elections': {
-    #             'PRES12': ['PRES12D', 'PRES12R'],
-    #             'SEN12': ['SEN12D', 'SEN12R'],
-    #             'GOV12': ['GOV12D', 'GOV12R'],
-    #             'LTGOV12': ['LG12D', 'LG12R'],
-    #             'SEN14': ['SEN14D', 'SEN14R'],
-    #             'AG14': ['AG14D', 'AG14R'],
-    #             'TRE14': ['TRE14D', 'TRE14R'],
-    #             'AUD14': ['AUD14D', 'AUD14R'],
-    #             'PRES16': ['PRES16D', 'PRES16R'],
-    #             'GOV16': ['GOV16D', 'GOV16R'],
-    #             'LTGOV16': ['LG16D', 'LG16R'],
-    #             'SEN18': ['SEN18D', 'SEN18R'],
-    #             'TRE18': ['TRE18D', 'TRE18R'],
-    #             'AUD18': ['AUD18D', 'AUD18R']},
-    #         'POP_COL': 'TOTPOP',
-    #         'ENACTED_COL': ['HDIST', 'SEND'],
-    #         'UNIT_COL': 'EDRD_2012',
-    #         'past4': ['PRES16', 'SEN18', 'PRES12', 'SEN14'],
-    #         'early': ['SEN12', 'GOV12', 'LTGOV12', 'SEN14', 'AG14', 'TRE14', 'AUD14'],
-    # },
-    # 'MN': {'elections': {
-    #             'SEN18': ['SEN18D', 'SEN18R'],
-    #             'GOV18': ['GOV18D', 'GOV18R'],
-    #             'SOS18': ['SOS18D', 'SOS18R'],
-    #             'AUD18': ['AUD18D', 'AUD18R'],
-    #             'AG18': ['AG18D', 'AG18R'],
-    #             'PRES16': ['PRES16D', 'PRES16R'],
-    #             'SEN14': ['SEN14D', 'SEN14R'],
-    #             'GOV14': ['GOV14D', 'GOV14R'],
-    #             'SOS14': ['SOS14D', 'SOS14R'],
-    #             'AUD14': ['AUD14D', 'AUD14R'],
-    #             'AG14': ['AG14D', 'AG14R'],
-    #             'PRES12': ['PRES12D', 'PRES12R'],
-    #             'SEN12': ['SEN12D', 'SEN12R']},
-    #         'POP_COL': 'TOTPOP',
-    #         'ENACTED_COL': ['CONGDIST', 'MNLEGDIST', 'MNSENDIST'],
-    #         'UNIT_COL': 'VTDID',
-    #         'past4': ['PRES16', 'SEN18', 'PRES12', 'SEN14'],
-    #         'early': ['PRES12', 'SEN12', 'AUD14', 'AG14', 'GOV14', 'SEN14', 'SOS14'],
-    # },
-    # 'ME': {'elections': {
-    #             'PRES12': ['PRES12D+', 'PRES12R+'],
-    #             'SEN14': ['SEN14D+', 'SEN14R+'],
-    #             'PRES16': ['PRES16D+', 'PRES16R+'],
-    #             'SEN18': ['SEN18D+', 'SEN18R+']},
-    #         'POP_COL': 'TOTPOP',
-    #         'ENACTED_COL': ['CD', 'HDIST', 'SEND'],
-    #         'UNIT_COL': 'Precinct',
-    #         'past4': ['PRES16', 'SEN18', 'PRES12', 'SEN14'],
-    #         'early': ['PRES12', 'SEN14'],
-    # },
-    # 'NH': {'elections': {
-    #             'PRES12': ['PRES12D', 'PRES12R'],
-    #             'GOV12': ['GOV12D', 'GOV12R'],
-    #             'GOV14': ['GOV14D', 'GOV14R'],
-    #             'PRES16': ['PRES16D', 'PRES16R'],
-    #             'GOV16': ['GOV16D', 'GOV16R'],
-    #             'SEN16': ['SEN16D', 'SEN16R'],
-    #             'GOV18': ['GOV18D', 'GOV18R'],
-    #             'GOV20': ['GOV20D', 'GOV20R'],
-    #             'PRES20': ['PRES20D', 'PRES20R'],
-    #             'SEN20': ['SEN20D', 'SEN20R']},
-    #         'POP_COL': 'TOTPOP',
-    #         'ENACTED_COL': ['CD', 'HDIST', 'SEND'],
-    #         'UNIT_COL': 'Precinct',
-    #         'past4': ['PRES20', 'SEN20', 'PRES16', 'SEN16'],
-    #         'early': ['PRES12', 'GOV12', 'GOV14'],
-    # },
     "NC": {
         "elections": {
             "GOV08":["EL08G_GV_D", "EL08G_GV_R"],
@@ -101,7 +32,6 @@ states = {
         "past4": ["PRES16", "PRES12", "SEN16", "SEN14"],
         "early": ["GOV08", "SEN08", "SEN10", "GOV12", "PRES12"],
         "POP_COL": "TOTPOP",
-        # "ENACTED_COL": ["newplan", "oldplan", "judge"],
         "ENACTED_COL": ["newplan", "oldplan", "judge"] + ["NC_" + col for col in plan_names_538],
     },
     "PA": {
@@ -119,7 +49,6 @@ states = {
         "past4": ["PRES16", "PRES12", "SEN16", "SEN12"],
         "early": ["GOV10", "SEN10", "SEN12", "PRES12"],
         "POP_COL": "TOTPOP",
-        # "ENACTED_COL": ["CD_2011", "REMEDIAL", "GOV", "TS", "538DEM", "538GOP", "538CMPCT"],
         "ENACTED_COL": ["CD_2011", "TS", "REMEDIAL", "GOV"] + ["PA_" + col for col in plan_names_538],
     },
     "WI": {
@@ -157,7 +86,6 @@ states = {
         "early": ["GOV12", "PRES12", "SEN12", "GOV14", "SOS14", "TRE14", "AG14"],
         "POP_COL": "TOTPOP",
         "ENACTED_COL": ["WI_current_DIST"] + ["WI_" + col for col in plan_names_538],
-        # "ENACTED_COL": ["WI_" + col for col in plan_names_538],
     },
     "MA": {
         "elections": {
@@ -173,7 +101,6 @@ states = {
         "past4": ["PRES16", "PRES12", "SEN18", "SEN14"],
         "early": ["SEN12", "PRES12", "SEN13", "SEN14", "GOV14"],
         "POP_COL": "TOTPOP",
-        # "ENACTED_COL": ["CD"],
         "ENACTED_COL": ["CD"] + ["MA_" + col for col in plan_names_538],
     },
     "MD": {
@@ -192,11 +119,9 @@ states = {
         "past4": ["PRES16", "PRES12", "SEN18", "SEN16"],
         "early": ["PRES12", "SEN12", "GOV14", "AG14", "COMP14"],
         "POP_COL": "TOTPOP",
-        # "ENACTED_COL": ["CD", "CNG02"],
         "ENACTED_COL": ["CD", "CNG02"] + ["MD_" + col for col in plan_names_538],
     },
     "TX": {
-        # "file": "data/TX_VTDs/TX_VTDs.shp",
         "elections": {
             "PRES12":["ObamaD_12G", "RomneyR_12"],
             "SEN12":["SadlerD_12", "CruzR_12G_"],
@@ -224,20 +149,8 @@ states = {
         # "early": ["RRCOMM12", "PRES12", "SEN12", "RRCOMM14", "SEN14", "LTGOV14", "LANDCOMM14", "GOV14", "COMP14", "AG14", "AGCOMM14"],
         "early": ["PRES12", "SEN12", "SEN14", "GOV14", "AG14"],
         "POP_COL": "TOTPOP_x",
-        # "ENACTED_COL": ["CD", "Seed_Demo", "538_Dem", "538_Comp_1", "538_Propor", "Seed3"],
         "ENACTED_COL": ["PLANC185_DIST", "CD"] + ["TX_" + col for col in plan_names_538],
     },
-    # 'VT': {'elections': {
-    #         'PRES16': ['PRES16D', 'PRES16R'],
-    #         'SEN16': ['SEN16D', 'SEN16R'],
-    #         'PRES12': ['PRES12D', 'PRES12R'],
-    #         'SEN12': ['SEN12B', 'SEN12R']},
-    #     'POP_COL': 'TOTPOP',
-    #     'ENACTED_COL': ['SENDIST'],
-    #     'UNIT_COL': 'GEOID10',
-    #     'past4': ['PRES16', 'SEN16', 'PRES12', 'SEN12'],
-    #     'early': ['PRES12', 'SEN12'],
-    # },
 }
 
 def initialize_graph(state):
@@ -476,9 +389,6 @@ def swinginess(partition, elections):
     swing_dist_weighted_pct = num_swing_dists_weighted/len(partition)
     swing_swaps_pct = num_swing_swaps/num_pairs
     return swing_dist_pct, swing_dist_weighted_pct, swing_swaps_pct
-
-
-
 
 def binary_violation(partition, election):
     """

@@ -44,6 +44,5 @@ def get_pie_values(states_list, score_kind):
         
 
 if __name__=="__main__":
-    # states_list = ["NC", "PA", "WI", "MA", "MD", "TX"]
-    states_list = ["NC"]
+    states_list = ["NC", "PA", "WI", "MA", "MD", "TX"]
     get_pie_values(states_list, "eg")
