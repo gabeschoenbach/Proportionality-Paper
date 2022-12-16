@@ -8,7 +8,6 @@ def main():
         plans = states[state]["ENACTED_COL"]
         for idx, plan in enumerate(plans):
             partition = initialize_partition(graph, state, idx)
-            print(plan, len(partition))
             elections = list(states[state]["elections"].keys())
             output_path = f"outputs/{state}/{state}_{plan}_election_stats.csv"
             if os.path.exists(output_path):
