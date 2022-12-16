@@ -2,7 +2,7 @@ from chain_functions import *
 from plotting_functions import make_df
 
 def main():
-    for state in ["TX", "WI"]:
+    for state in states.keys():
         print(f"Saving plans stats on {state}...")
         output_path = f"outputs/{state}/{state}_mean_var_stats.csv"
         if os.path.exists(output_path):
@@ -17,7 +17,8 @@ def main():
         f.close()
 
         # Prep R seats (from ensemble) dataframe
-        stats = pd.read_csv(f"outputs/{state}/{state}_election_stats.csv", index_col=0)
+        first_plan = states[state]["ENACTED_COL"][0]
+        stats = pd.read_csv(f"outputs/{state}/{state}_{first_plan}_election_stats.csv", index_col=0)
         elections = states[state]["elections"].keys()
         R_vshare = dict(stats.loc['vote_share'])
         k = int(stats.loc['seats'][0])
