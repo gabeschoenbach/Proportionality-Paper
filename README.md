@@ -5,7 +5,7 @@ This repo contains data, experiments, and outputs for `Redistricting for Proport
 If desired, following the below steps will suffice to replicate the results found in the paper.
 
 ### Programming environment
-You will need to use (conda)[https://conda.io/projects/conda/en/latest/index.html] to set up the correct programming environment, by running
+You will need to use [conda](https://conda.io/projects/conda/en/latest/index.html) to set up the correct programming environment, by running
 ```sh
 conda env create -f environment.yml
 ```
